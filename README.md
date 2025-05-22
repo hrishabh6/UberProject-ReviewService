@@ -113,3 +113,7 @@ public class JpaConfig {
 | Config | Enables features like auditing |
 
 This setup is a typical starting point for a Spring Boot + JPA project.
+
+## Mapped superclass
+-`@MappedSuperclass` allows a base class to inherit its properties in child 
+class via inheritence in spring jpa
