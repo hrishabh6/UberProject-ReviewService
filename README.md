@@ -114,6 +114,11 @@ public class JpaConfig {
 
 This setup is a typical starting point for a Spring Boot + JPA project.
 
-## Mapped superclass
--`@MappedSuperclass` allows a base class to inherit its properties in child 
+## Inheritance in spring JPA
+* `@MappedSuperclass` allows a base class to inherit its properties in child 
 class via inheritence in spring jpa
+
+* `@Inheritance(strategy = InheritanceType.SINGLE_TABLE)` makes a single table with all attributes of parent and child class
+  (`nullable = false` is not applied here)
+* `@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)` same as `@MappedSuperClass` but just makes a dedicated table for Parent class
+* `@Inheritance(strategy = InheritanceType.JOINED)` Put common fields in one table (for the parent), and put specific fields of each child class in separate tables. Then link them using IDs.
