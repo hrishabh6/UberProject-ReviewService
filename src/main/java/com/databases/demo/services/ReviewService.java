@@ -1,6 +1,8 @@
 package com.databases.demo.services;
 
+import com.databases.demo.models.Booking;
 import com.databases.demo.models.Review;
+import com.databases.demo.repositories.BookingRepository;
 import com.databases.demo.repositories.ReviewRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
@@ -10,7 +12,14 @@ public class ReviewService implements CommandLineRunner {
 
     private ReviewRepository reviewRepository;
 
-    public ReviewService(ReviewRepository reviewRepository){
+    private BookingRepository bookingRepository;
+
+
+    public ReviewService(
+            ReviewRepository reviewRepository,
+            BookingRepository bookingRepository
+    ){
+        this.bookingRepository = bookingRepository;
         this.reviewRepository = reviewRepository;
     }
 
@@ -22,7 +31,13 @@ public class ReviewService implements CommandLineRunner {
                 .rating(5.0)
                 .build();
 
-        reviewRepository.save(r);
+        Booking b = Booking
+                .builder()
+                .review(r)
+                .build();
+
+
+        bookingRepository.save(b);
 
     }
 

@@ -8,11 +8,11 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.util.Date;
 
 @EntityListeners(AuditingEntityListener.class)
-@Inheritance(strategy = InheritanceType.JOINED)
+@MappedSuperclass
 public abstract class BaseModel {
 
     @Id //Makes the property a primary key of our table
-    @GeneratedValue(strategy = GenerationType.TABLE) //it means auto increment
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //it means auto increment
     protected long id;
 
     @Column(nullable = false)
