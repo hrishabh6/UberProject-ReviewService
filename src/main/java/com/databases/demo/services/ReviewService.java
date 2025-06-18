@@ -1,45 +1,21 @@
 package com.databases.demo.services;
 
-import com.databases.demo.models.Booking;
 import com.databases.demo.models.Review;
-import com.databases.demo.repositories.BookingRepository;
-import com.databases.demo.repositories.ReviewRepository;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
+import java.util.List;
+import java.util.Optional;
 
 @Service
-public class ReviewService implements CommandLineRunner {
+public interface ReviewService {
 
-    private ReviewRepository reviewRepository;
+    public Optional<Review> findReviewById(Long id);
 
-    private BookingRepository bookingRepository;
+    public List<Review> findAllReviews();
 
+    public boolean deleteReviewById(Long id);
 
-    public ReviewService(
-            ReviewRepository reviewRepository,
-            BookingRepository bookingRepository
-    ){
-        this.bookingRepository = bookingRepository;
-        this.reviewRepository = reviewRepository;
-    }
+    public Review publishReview(Review review);
 
-    @Override
-    public void run(String... args) throws Exception {
-        Review r = Review
-                .builder()
-                .content("Amazing ride")
-                .rating(5.0)
-                .build();
-
-        Booking b = Booking
-                .builder()
-                .review(r)
-                .build();
-
-
-        bookingRepository.save(b);
-
-    }
+    public Review updateReview(Long id, Review review);
 
 }
-

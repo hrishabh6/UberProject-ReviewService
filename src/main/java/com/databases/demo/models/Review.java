@@ -20,6 +20,13 @@ public class Review extends BaseModel{
     @Column(nullable = false)
     String content;
 
-    double rating;
+    Double rating;
+
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @JoinColumn(nullable = false)
+    private Booking booking;
+
+    @Override
+    public String toString(){return "review : " + this.content + " "  + this.rating + " " + this.createdAt;}
 
 }
