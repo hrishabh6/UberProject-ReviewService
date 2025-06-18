@@ -22,7 +22,7 @@ public class Driver extends BaseModel{
     private String name;
 
     @Column(nullable = false, unique = true)
-    private String `licenceNumber`;
+    private String licenceNumber;
 
     private String phoneNumber;
 
