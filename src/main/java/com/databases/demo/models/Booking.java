@@ -13,8 +13,6 @@ import java.util.Date;
 @Builder
 public class Booking extends BaseModel{
 
-    @OneToOne(cascade = CascadeType.PERSIST)
-    private Review review; //We have defined 1:1 relationship between Booking and review
 
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date startingTime;
