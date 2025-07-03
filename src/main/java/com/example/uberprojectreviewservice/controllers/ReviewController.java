@@ -1,10 +1,10 @@
 package com.example.uberprojectreviewservice.controllers;
 
 
+import com.example.uberprojectentityservice.models.Review;
 import com.example.uberprojectreviewservice.adapter.CreateReviewDtoToReviewAdapter;
 import com.example.uberprojectreviewservice.dto.CreateReviewDTO;
 import com.example.uberprojectreviewservice.dto.ReviewDTO;
-import com.example.uberprojectreviewservice.models.Review;
 import com.example.uberprojectreviewservice.services.ReviewService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

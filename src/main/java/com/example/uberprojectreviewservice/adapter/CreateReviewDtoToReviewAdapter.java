@@ -1,8 +1,9 @@
 package com.example.uberprojectreviewservice.adapter;
 
+import com.example.uberprojectentityservice.models.Booking;
+import com.example.uberprojectentityservice.models.Review;
 import com.example.uberprojectreviewservice.dto.CreateReviewDTO;
-import com.example.uberprojectreviewservice.models.Booking;
-import com.example.uberprojectreviewservice.models.Review;
+
 import com.example.uberprojectreviewservice.repositories.BookingRepository;
 import org.springframework.stereotype.Component;
 

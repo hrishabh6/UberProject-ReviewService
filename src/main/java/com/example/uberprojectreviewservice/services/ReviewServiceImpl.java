@@ -1,6 +1,6 @@
 package com.example.uberprojectreviewservice.services;
 
-import com.example.uberprojectreviewservice.models.Review;
+import com.example.uberprojectentityservice.models.Review;
 import com.example.uberprojectreviewservice.repositories.ReviewRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
